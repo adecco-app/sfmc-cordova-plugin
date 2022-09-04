@@ -19,7 +19,7 @@ repositories {
 
 dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.0")
-    implementation("com.salesforce.marketingcloud:marketingcloudsdk:7.3.+")
+    implementation("com.salesforce.marketingcloud:marketingcloudsdk:7.4.+")
 }
 
 ext.cdvPluginPostBuildExtras.add({

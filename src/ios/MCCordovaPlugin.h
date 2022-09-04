@@ -54,6 +54,7 @@
 
 - (void)registerEventsChannel:(CDVInvokedUrlCommand *)command;
 - (void)subscribe:(CDVInvokedUrlCommand *)command;
+- (void)track:(CDVInvokedUrlCommand *)command;
 
 - (void)clearBadges:(CDVInvokedUrlCommand *)command;
 
