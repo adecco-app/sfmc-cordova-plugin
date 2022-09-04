@@ -318,7 +318,18 @@ var MCCordovaPlugin = {
     track: function(eventName, attributesMap) {
         argsCheck.checkArgs('soFF', `${PLUGIN_NAME}.track`, arguments);
         _exec(undefined, undefined, 'track', [eventName, attributesMap]);
-    }
+    },
+
+    /**
+    * Clear badges on app icon
+    *
+    * @param  {function} [successCallback]
+    * @param  {function} [errorCallback]
+    */
+   clearBadges: function (successCallback, errorCallback) {
+    argsCheck.checkArgs("FF", `${PLUGIN_NAME}.clearBadges`, arguments);
+    _exec(successCallback, errorCallback, "clearBadges");
+  },
 
 };
 
