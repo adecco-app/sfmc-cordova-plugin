@@ -25,6 +25,7 @@
  */
 package com.salesforce.marketingcloud.cordova;
 
+import android.Manifest;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -136,6 +137,9 @@ public class MCCordovaPlugin extends CordovaPlugin implements UrlHandler {
         Intent intent = cordova.getActivity().getIntent();
         if (intent != null && intent.hasExtra(EXTRA_MESSAGE)) {
             handleNotificationMessage(NotificationManager.extractMessage(intent));
+        }
+        if(!cordova.hasPermission(Manifest.permission.POST_NOTIFICATIONS)) {
+            cordova.requestPermission(this, 0, Manifest.permission.POST_NOTIFICATIONS);
         }
     }
 
