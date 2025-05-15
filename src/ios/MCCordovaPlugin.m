@@ -304,6 +304,10 @@ const int LOG_LENGTH = 800;
     }];
 }
 
+- (void)clearBadges:(CDVInvokedUrlCommand *)command {
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+}
+
 - (void)setAttribute:(CDVInvokedUrlCommand *)command {
     NSString *name = command.arguments[0];
     NSString *value = command.arguments[1];

@@ -350,6 +350,18 @@ var MCCordovaPlugin = {
         _exec(successCallback, errorCallback, 'setAnalyticsEnabled', [enabled]);
     },
 
+
+     /**
+    * Clear badges on app icon
+    *
+    * @param  {function} [successCallback]
+    * @param  {function} [errorCallback]
+    */
+    clearBadges: function (successCallback, errorCallback) {
+        argsCheck.checkArgs("FF", `${PLUGIN_NAME}.clearBadges`, arguments);
+        _exec(successCallback, errorCallback, "clearBadges");
+    },
+
     /**
      * Checks if analytics are enabled in the native Marketing Cloud SDK.
      * @param  {function(enabled)} successCallback

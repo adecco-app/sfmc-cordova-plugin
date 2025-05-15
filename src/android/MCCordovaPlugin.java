@@ -261,6 +261,8 @@ public class MCCordovaPlugin extends CordovaPlugin implements UrlHandler {
                 return enabledPush();
             case "disablePush":
                 return disablePush();
+            case "clearBadges":
+                return clearBadges();
             case "getDeviceId":
                 return getDeviceId();
             case "getAttributes":
@@ -310,6 +312,20 @@ public class MCCordovaPlugin extends CordovaPlugin implements UrlHandler {
             public void execute(
                 SFMCSdk sdk, JSONArray args, CallbackContext callbackContext) {
                 EventUtility.log("MCSDK STATE", sdk.getSdkState().toString());
+                callbackContext.success();
+            }
+        };
+    }
+
+    private ActionHandler clearBadges() {
+        return new ActionHandler() {
+            @Override
+            public void execute(
+                MarketingCloudSdk sdk, JSONArray args, CallbackContext callbackContext) {
+                android.app.NotificationManager notificationManager = (android.app.NotificationManager) cordova.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
+                if(notificationManager != null) {
+                    notificationManager.cancelAll();
+                }
                 callbackContext.success();
             }
         };

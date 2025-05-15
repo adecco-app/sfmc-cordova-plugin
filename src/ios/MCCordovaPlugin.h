@@ -54,6 +54,9 @@
 - (void)addTag:(CDVInvokedUrlCommand *)command;
 - (void)removeTag:(CDVInvokedUrlCommand *)command;
 - (void)getTags:(CDVInvokedUrlCommand *)command;
+- (void)clearBadges:(CDVInvokedUrlCommand *)command;
+
+
 
 - (void)registerEventsChannel:(CDVInvokedUrlCommand *)command;
 - (void)subscribe:(CDVInvokedUrlCommand *)command;
