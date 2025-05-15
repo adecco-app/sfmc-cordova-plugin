@@ -318,10 +318,10 @@ public class MCCordovaPlugin extends CordovaPlugin implements UrlHandler {
     }
 
     private ActionHandler clearBadges() {
-        return new ActionHandler() {
+        return new PushSDKActionHandler() {
             @Override
             public void execute(
-                MarketingCloudSdk sdk, JSONArray args, CallbackContext callbackContext) {
+                PushModuleInterface sdk, JSONArray args, CallbackContext callbackContext) {
                 android.app.NotificationManager notificationManager = (android.app.NotificationManager) cordova.getContext().getSystemService(Context.NOTIFICATION_SERVICE);
                 if(notificationManager != null) {
                     notificationManager.cancelAll();
